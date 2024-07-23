@@ -126,6 +126,8 @@ class Client :
                     print(f"you successfully purchased the {item.product_name} for {item.product_price}")
                     self.successfully_purchased.append(item.product_name)
                     item.product_amount -= 1
+                    self.client_wallet -= item.product_price
+
                 else:
                     print(f"the product {item.product_name} is out of stock")
         else:
@@ -180,3 +182,6 @@ client1.clear_cart()
 Shop.show_clients()
 
 Shop.about_us()
+
+
+print(client1.client_wallet)
